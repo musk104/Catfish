@@ -1,0 +1,338 @@
+body {
+    background-color: #9de1fb;
+    font-family: Georgia, serif;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* 📝 Title */
+#title {
+    font-size: 3rem;
+    margin-top: 20px;
+    font-family: Georgia, serif;
+}
+
+/* 📝 Fish Name Input */
+#name-container {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-family: Georgia, serif;
+}
+
+input {
+    font-size: 1.2rem;
+    padding: 5px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Georgia, serif;
+}
+
+/* 🎤 Name Display */
+#name-display {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+/* 🐟 Fish */
+#fish-container {
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -200px; /* Start off-screen */
+    animation: swim 10s linear infinite; /* Slower, one-way swimming */
+}
+
+#fish {
+    width: 150px;
+    height: 80px;
+    background: linear-gradient(to right, #ff9a8b, #ff6a88, #ecff19b6);
+    border: 2px solid black;
+    border-radius: 50%;
+    position: relative;
+}
+/* 👀 Fish Eye */
+#eye {
+    width: 15px; /* Small and cute */
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 25px;  /* Adjust based on fish size */
+    right: 20px; /* Position near the front */
+}
+/* 🎋 Tail */
+#tail {
+    width: 50px;
+    height: 60px;
+    background: inherit;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    left: -40px;
+    top: 10px;
+    transform: rotate(20deg);
+}
+
+/* 🦈 Top Fin */
+#top-fin {
+    width: 40px;
+    height: 34px;
+    background: inherit;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    left: 50px;
+    transform: rotate(-30deg);
+}
+
+/* 🦈 Bottom Fin */
+#bottom-fin {
+    width: 40px;
+    height: 34px;
+    background: inherit;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -40px;
+    left: 50px;
+    transform: rotate(30deg);
+}
+
+/* 🎬 Fish Swimming Animation (One-Way) */
+@keyframes swim {
+    0% {
+        left: -200px;
+    }
+    100% {
+        left: 100vw;
+    }
+}
+#bubbles {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* 🫧 Bubble Style */
+.bubble {
+    position: absolute;
+    bottom: -50px; /* Start below screen */
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: floatUp 5s linear infinite;
+}
+
+/* 🎬 Bubble Animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+/* 🌿 Coral Container */
+.coral {
+    width: 80px; /* Size of the coral */
+    height: 90px;
+    background-color: #ff9a4c; /* Coral color */
+    border-radius: 30px 30px 0 0; /* Rounded top */
+    position: fixed;
+    bottom: 0;
+}
+
+/* 🌊 Left Coral */
+#coral-left {
+    left: 30px; /* Position on the left */
+}
+
+/* 🌊 Right Coral */
+#coral-right {
+    right: 30px; /* Position on the right */
+}
+/* 🪼 Jellyfish */
+.jellyfish {
+    width: 50px;
+    height: 60px;
+    background-color: rgba(255, 182, 193, 0.8); /* Light pink */
+    border-radius: 50px 50px 10px 10px;
+    position: fixed;
+    bottom: -100px; /* Starts below screen */
+    animation: floatUp 10s linear infinite; /* Slow movement */
+}
+
+/* 🎭 Tentacle Container */
+.tentacles {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -20px;
+    left: 5px;
+    width: 40px;
+}
+
+/* 🌀 Individual Tentacle */
+.tentacle {
+    width: 5px;
+    height: 30px;
+    background-color: rgba(245, 145, 160, 0.6);
+    border-radius: 50%;
+    animation: wave 1.5s ease-in-out infinite alternate;
+}
+
+/* 🏄‍♂️ Tentacle Wave Animation */
+@keyframes wave {
+    0% { transform: translateX(0px); }
+    100% { transform: translateX(5px); }
+}
+
+/* 🎬 Floating Up Animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh); /* Moves up off-screen */
+        opacity: 0;
+    }
+}
+/* 🦀 CRAB */
+#crab {
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    width: 60px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: crabMove 5s infinite alternate ease-in-out;
+}
+
+/* 👀 Eyes */
+.crab-eyes {
+    position: absolute;
+    top: -15px;
+    display: flex;
+    gap: 10px;
+}
+.eye {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+}
+.eye::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 🦀 Claws */
+.claws {
+    position: absolute;
+    top: -10px;
+    display: flex;
+    gap: 50px;
+}
+.claw {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 79, 79);
+    clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+}
+
+/* 🦀 Legs */
+.crab-legs {
+    position: absolute;
+    bottom: -5px;
+    display: flex;
+    gap: 30px;
+}
+.leg {
+    width: 15px;
+    height: 5px;
+    background-color: rgb(255, 79, 79);
+    border-radius: 10px;
+}
+@keyframes crabMove {
+        0% { left: 10%; }
+        100% { left: 80%; }
+}
+
+/* ⭐ STARFISH */
+#starfish {
+    position: absolute;
+    bottom: 10px;
+    right: 20%;
+    width: 40px;
+    height: 40px;
+    background-color: orange;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* ⚓ SHIPWRECK */
+#shipwreck {
+    position: absolute;
+    bottom: 5px;
+    left: 40%;
+    width: 70px;
+    height: 40px;
+    background: brown;
+    clip-path: polygon(0% 100%, 20% 0%, 80% 0%, 100% 100%);
+}
+
+/* 🌿 SEAWEED */
+.seaweed {
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    width: 10px;
+    height: 80px;
+    background-color: green;
+    border-radius: 10px;
+    animation: sway 3s infinite alternate ease-in-out;
+}
+@keyframes sway {
+    0% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+
+/* 🪼 Glowing Jellyfish */
+body.night-mode .jellyfish {
+    background-color: rgba(173, 216, 230, 0.8);
+    box-shadow: 0px 0px 10px lightblue;
+}
